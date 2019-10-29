@@ -1,0 +1,29 @@
+[{
+        "section": "Front-end",
+        "skills": {
+            "HTML5": "80",
+            "CSS3": "70",
+            "Javascript": "40",
+            "Jquery и Vue.js": "40"
+        }
+    },
+
+
+
+
+    {
+        "section": "Workflow",
+        "skills": {
+            "GIT": "55",
+            "Terminal": "40",
+            "Gulp": "35",
+            "Webpack": "30"
+        }
+    }
+
+
+
+
+
+
+]
