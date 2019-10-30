@@ -1,35 +1,26 @@
 import Vue from "vue"
 import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
-
-console.log('все ок')
-
-
+import {
+    swiper,
+    swiperSlide
+} from 'vue-awesome-swiper'
 
 const quote = {
     template: "#quote",
     props: ["wisdom"],
-    components: { swiperSlide }
+    components: {
+        swiperSlide
+    }
 }
-
-
-
 
 new Vue({
     el: '#feedback',
-
     components: {
-
         quote,
         swiper
-
-
     },
     data: () => ({
-
         quotes: [],
-
         swiperOption: {
             slidesPerView: 2,
             spaceBetween: 0,
@@ -39,14 +30,11 @@ new Vue({
                 disabledClass: 'feedback__button--disabled',
             },
             breakpoints: {
-
                 600: {
                     slidesPerView: 1,
                 },
             }
         }
-
-
     }),
 
     methods: {
@@ -59,19 +47,9 @@ new Vue({
         }
     },
 
-
-
-
-
-
-
-
-
     created() {
         const data = require("../jsons/quotes.json");
         this.quotes = this.addImagePaths(data)
     }
-
-
 
 })

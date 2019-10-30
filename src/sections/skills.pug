@@ -1,56 +1,28 @@
 section(id='skills').section.skills
-      .container.container--skills
-        .backpack-picture
-        .why-me
-          h2.h2.why-me__headline Чем я могу быть полезен вам
-          p.why-me__text Этот сайт я сделал в рамках обучения в Школе онлайн образования<br> Loftschool. Чуть позже я освежу в нём свой контент. А пока <br> посмотрите, как тут всё классно и красиво!
-          branches
-          
-          
-
+  .container.skills__container
+    .backpack-picture
+    .why-me
+      h2.h2.why-me__headline Чем я могу быть полезен вам
+      p.why-me__text Этот сайт я сделал в рамках обучения в Школе онлайн образования<br> Loftschool. Чуть позже я освежу в нём свой контент. А пока <br> посмотрите, как тут всё классно и красиво!
+      branches
 
 script#branches(type='x-template')
+
   .skills-widget 
     branch(v-for="branch in skills" :branch = "branch")
 
-    
-
-
-
-  
-   
-
 script#skills-list(type="x-template")
-  
+
   .why-me__skills-branch
-    
-      h2.h2.why-me__headline.why-me__headline--skills-list {{branch.section}}
-      ul.why-me__skills-list 
-       li.why-me__list-item(v-for="(value, name) in branch.skills" )
+    h2.h2.why-me__headline.why-me__headline--skills-list {{branch.section}}
+    ul.why-me__skills-list 
+      li.why-me__list-item(v-for="(value, name) in branch.skills" )
         skill(:name='name' :percent='value')
 
-
 script#skill(type='x-template')
+
   .skillbox
- 
     svg(viewBox="0 0 100 100").percentage
       circle.circle.circle__under
       circle(:style="{animationDelay: `-${percent}s`}").circle.circle__above 
     span.why-me__skill-name {{name}}
-
-
-
-
-
-        
-        
-        
-          
-
-        
-        
-   
-      
-  
-
-

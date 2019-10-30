@@ -1,12 +1,12 @@
 section(id="feedback").section.feedback 
-        .container.container--feedback
-          .feedback__article
-            h2.h2.feedback__headline Что обо мне говорят
-            button.feedback__button.feedback__button--left
-            button.feedback__button.feedback__button--right 
-          ul.quotes-list
-            swiper(ref="mySwiper" :options="swiperOption")
-              quote(v-for = "wisdom in quotes" :wisdom = "wisdom")
+  .container.feedback__container
+    .feedback__article
+      h2.h2.feedback__headline Что обо мне говорят
+      button.feedback__button.feedback__button--left
+      button.feedback__button.feedback__button--right 
+    ul.quotes-list
+      swiper(ref="mySwiper" :options="swiperOption")
+        quote(v-for = "wisdom in quotes" :wisdom = "wisdom")
 
 script#quote(type="x-template")
   swiper-slide
