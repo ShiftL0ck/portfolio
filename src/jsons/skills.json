@@ -8,9 +8,6 @@
         }
     },
 
-
-
-
     {
         "section": "Workflow",
         "skills": {
@@ -20,10 +17,4 @@
             "Webpack": "30"
         }
     }
-
-
-
-
-
-
 ]
