@@ -14,7 +14,7 @@ script#quote(type="x-template")
       p.quotes-list__text {{wisdom.text}}
       .quotes-list__speaker-info
         .quotes-list__speaker-photo
-          img.quotes-list__speaker-png(:src="wisdom.photo")
+          img.quotes-list__speaker-png(:src="url+wisdom.photo")
         .quotes-list__speaker-textcontent
-          .quotes-list__speaker-name {{wisdom.name}}
-          .quotes-list__speaker-position {{wisdom.position}}
+          .quotes-list__speaker-name {{wisdom.author}}
+          .quotes-list__speaker-position {{wisdom.occ}}

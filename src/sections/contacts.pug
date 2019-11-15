@@ -1,18 +1,43 @@
-section(id="contacts").section.contacts
-  .container.contacts__container
-    form.form
-      span.form__row
-        h2.h2.form__headline Связаться со мной
-      span.form__row  
-        span.form__col.form__col--name
-          label(for = "name" ).form__label Введите ваше имя
-          input(type = 'text', id = "name" placeholder="Ковальчук Дмитрий").form__input
-        span.form__col.form__col--mail
-          label(for = "mail").form__label Введите ваш email
-          input(type = 'email', id = "mail" placeholder="loftschool@study.com").form__input
-      span.form__row
-        span.form__col.form__col--message
-          label(for = "message").form__label Сообщение к письму
-          textarea(cols="30", rows="2", resize: none, id = "message", placeholder="Требуется ваша помощь в создании сайта, интересуют сроки и цена вопроса").form__input.form__input--textarea
-      span.form__row.form__row--button
-        button(type="submit").form__button Отправить
+script(type="text/x-template")#contacts-component
+  section.contacts#contacts
+    .container.contacts__container
+      .contacts__content
+        h2.title.title--contacts.contacts__title Связаться со мной
+        form.contacts__form(@submit.prevent="sendMessage")
+          .contacts__form-row
+            .contacts__form-col
+              label.contacts__form-block(
+                for="name"
+                :class="{'error' : validation.firstError('user.name')}"
+              )
+                span.contacts__form-label Введите ваше имя
+                input.contacts__form-input.contacts__form-input--name#name(type="text" name="name" placeholder="Денис Петрович" v-model="user.name")
+                .contacts__form-error
+                  error-tooltip(
+                    :errorText="validation.firstError('user.name')"
+                  )
+            .contacts__form-col
+              label.contacts__form-block(
+                for="email"
+                :class="{'error' : validation.firstError('user.email')}"
+              )
+                span.contacts__form-label Введите ваш email
+                input.contacts__form-input.contacts__form-input--email#email(type="text" name="email" placeholder="name@mail.com" v-model="user.email")
+                .contacts__form-error
+                  error-tooltip(
+                    :errorText="validation.firstError('user.email')"
+                  )
+          .contacts__form-row.contacts__form-row--last
+            .contacts__form-col
+              label.contacts__form-block(
+                for="message"
+                :class="{'error' : validation.firstError('user.message')}"
+              )
+                span.contacts__form-label.contacts__form-label--textarea Сообщение к письму
+                textarea.contacts__form-textarea#message(name="message" rows="1" resize: none placeholder="Требуется помощь в создании сайта, цена..." v-model="user.message")
+                .contacts__form-error
+                  error-tooltip(
+                    :errorText="validation.firstError('user.message')"
+                  )
+          .contacts__form-row.contacts__form-row--submit
+            button(type="submit").contacts__form-submit-btn Отправить

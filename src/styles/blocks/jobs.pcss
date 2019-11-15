@@ -3,6 +3,7 @@
 }
 
 .jobs__content {
+  margin-left: 28px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -36,14 +37,19 @@
   &:hover {
     background-color: #5500f3;
     transition: 0.3s;
-    transform: translateX(-20%);
-    width: 125%;
   }
 }
 
 .jobs__button {
   overflow: hidden;
   border: 3px solid transparent;
+}
+
+.smallPreview{
+  &:hover {
+    opacity: 0.55;
+    transition: 0.3s;
+  }
 }
 
 .active {
@@ -112,12 +118,9 @@
   margin-bottom: 30px;
 }
 
-.jobs__link {
+.jobs__link-text{
   color: #586fd3;
   font-weight: 900;
-  border-bottom: 2px solid transparent;
-  transition: 0.3s;
-
   &:hover {
     border-bottom: 2px solid #586fd3;
     transition: 0.3s;
@@ -179,6 +182,7 @@
   .jobs__headline {
     text-align: center;
     width: 100%;
+    margin-left: 28px;
   }
 }
 

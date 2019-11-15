@@ -19,7 +19,6 @@ html(lang="ru")
         .parallax.parallax--5
         .parallax.parallax--6
         .parallax-content
-
           include sections/introduction.pug
           include sections/hello.pug
       include sections/skills.pug
@@ -31,76 +30,7 @@ html(lang="ru")
         .parallax-s.parallax-s--4
         .parallax-s-content
           include sections/feedback.pug
-          include sections/contacts.pug
+          #contacts-root  
       include sections/footer.pug
       include sections/popup.pug
-
-
-
-    script(src="src/main.js")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    include sections/contacts.pug
