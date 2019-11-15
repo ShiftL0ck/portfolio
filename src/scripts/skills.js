@@ -1,18 +1,18 @@
 import Vue from 'vue';
-import { endianness } from 'os';
+import {
+    endianness
+} from 'os';
+import axios from "axios";
+const baseUrl = 'https://webdev-api.loftschool.com/';
 
-
+axios.defaults.baseURL = baseUrl;
 
 const skill = {
     template: "#skill",
     props: ["name", "percent"]
-
-
-
 };
 
 const branch = {
-
     template: '#skills-list',
     components: {
         skill,
@@ -20,41 +20,31 @@ const branch = {
     props: [
         "branch"
     ],
-
-
-
-
 }
 
 const branches = {
     template: "#branches",
-    components: { branch },
+    components: {
+        branch
+    },
     data: () => ({
-
         skills: []
-
-
-
-
-
     }),
     created() {
-        const data = require("../jsons/skills.json");
-        this.skills = data
+        this.fetchGroups()
+    },
+    methods: {
+        fetchGroups() {
+            axios.get('/categories/229').then(response => {
+                this.skills = response.data
+            })
+        }
     }
-
-
-
-
 }
 
 new Vue({
     el: '#skills',
-
     components: {
-
         branches,
-
     },
-
 })

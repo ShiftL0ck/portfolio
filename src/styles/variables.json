@@ -4,5 +4,15 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+  "main-color": "#5500f2",
+  "footer-color": "#1f232d",
+  "errors-color": "#cd1515",
+  "bp-big-desktop": "1400px",
+  "bp-mini-desktop": "975px",
+  "bp-big-tablets": "840px",
+  "bp-less-than-tablets": "767px",
+  "bp-mini-tablets": "660px",
+  "bp-big-phones": "540px",
+  "bp-mini-phones": "320px"
 }

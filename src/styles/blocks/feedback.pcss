@@ -1,110 +1,196 @@
-.feedback {position: relative;
+.feedback {
+  position: relative;
 
-    &::before {content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-top: 100px solid #fff;
-        border-left: 49vw solid transparent;
-        border-right: 49vw solid transparent;
-    }
-    
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 100px solid #fff;
+    border-left: 49vw solid transparent;
+    border-right: 49vw solid transparent;
+  }
 }
-.container--feedback {padding-top: 250px;}
-.feedback__article {display: flex;
-    margin-left: 30px;
+
+.feedback__container {
+  padding-top: 250px;
 }
-.quotes-list {display: flex; margin-top: 70px;margin-left: 30px;}
+
+.feedback__article {
+  display: flex;
+  margin-left: 30px;
+}
+
+.quotes-list {
+  display: flex;
+  margin-top: 70px;
+  margin-left: 30px;
+}
+
 .quotes-list__item {
-    position: relative;
-    margin-left: 150px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &:first-child {margin-left: 110px;}
-&::before{content:"";
+  position: relative;
+  margin-left: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:first-child {
+    margin-left: 110px;
+  }
+
+  &::before {
+    content: "";
     position: absolute;
     left: -110px;
     width: 80px;
     height: 80px;
     top: 0;
     background: url('~images\content\quote.png') no-repeat center;
-    background-size: contain
-}}
+    background-size: contain;
+  }
+}
 
+.feedback__button {
+  border-radius: 50%;
+  border: 1px solid #464d62 !important;
+  height: 20px;
+  width: 20px;
+  padding: 20px;
+  background: svg-load('arrow-down.svg', fill = #464d62, width = 75%, height = 75%) no-repeat center;
+  background-size: 30%;
+  margin-left: 30px;
 
-.feedback__button {border-radius: 50%;
-     border: 1px solid #464d62;
-     height: 20px;
-     width: 20px;
-     padding: 20px;
-     background: svg-load('arrow-down.svg', fill = #464d62, width = 75%, height = 75% ) no-repeat center;
-     background-size: 30%;
-     margin-left: 30px;
+  &:hover {
+    background-size: 50%;
+  }
+}
 
-     &:hover {background-size: 50%}
-     
-     }
-.feedback__button--left {transform: rotate(180deg);margin-left: 100px;}
+.feedback__button--left {
+  transform: rotate(180deg);
+  margin-left: 100px;
+}
 
-.feedback__button--disabled {cursor:auto;
-      &:hover {background-size: 30%}; 
-      border: 1px solid gray;
-      background: svg-load('arrow-down.svg', fill = gray, width = 75%, height = 75% ) no-repeat center;
-      background-size: 30%;
+.feedback__button--disabled {
+  cursor: auto;
 
-    }
+  &:hover {
+    background-size: 30%;
+  };
+  border: 1px solid gray;
+  background: svg-load('arrow-down.svg', fill = gray, width = 75%, height = 75%) no-repeat center;
+  background-size: 30%;
+}
 
-.quotes-list__text, .quotes-list__speaker-position {color: rgba(#464e63, 0.5)}
+.quotes-list__text,
+.quotes-list__speaker-position {
+  color: rgba(#464e63, 0.5);
+}
 
-.quotes-list__speaker-name {font-weight:700}
+.quotes-list__speaker-name {
+  font-weight: 700;
+}
 
-.quotes-list__speaker-position {font-size: 12px;
-margin-top: 10px;}
+.quotes-list__speaker-position {
+  font-size: 12px;
+  margin-top: 10px;
+}
 
-.quotes-list__speaker-photo {border-radius: 50%;
-height: 100px;
-width: 100px; overflow: hidden; position: relative;  text-align:center; flex-shrink: 0}
+.quotes-list__speaker-photo {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  flex-shrink: 0;
+}
 
-.quotes-list__speaker-png {position: absolute;top:0; max-width: 500%; max-height:500% }
-.quotes-list__speaker-info {display:flex;
-margin-top: 25px;}
+.quotes-list__speaker-png {
+  position: absolute;
+  top: 0;
+  max-width: 500%;
+  max-height: 500%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
+.quotes-list__speaker-info {
+  display: flex;
+  margin-top: 25px;
+}
 
-.quotes-list__speaker-textcontent {display: flex;
-flex-direction: column;
-justify-content: center;
-margin-left: 25px;}
+.quotes-list__speaker-textcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25px;
+}
 
-
-@include tablets {.quotes-list{margin-left: 0;}}
-
-
-
-
-
+@include tablets {
+  .quotes-list {
+    margin-left: 0;
+  }
+}
 
 @include phones {
-    .container--feedback {padding-top: 110px;}
-    .feedback__article {display: grid;
-     grid-template-columns: 1fr 1fr;
+  .feedback__container {
+    padding-top: 110px;
+  }
+
+  .feedback__article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: fit-content fit-content;
-grid-template-areas: "text text"
-"left right";
-grid-gap: 10px 20px;
-margin-left: 0; }
-.feedback__headline {grid-area: text}
-.feedback__button--left{grid-area: left; justify-self: right}
-.feedback__button--right{grid-area: right; justify-self: left}
-.quotes-list {margin-top: 25px;}
-.quotes-list__item{
-    display: flex; align-items:center; flex-direction:column; width: 100%;
-  
+    grid-template-areas: "text text" "left right";
+    grid-gap: 10px 20px;
     margin-left: 0;
-    &::before{display: none}
-    &:first-child {margin-left: 0;}
+  }
+
+  .feedback__headline {
+    grid-area: text;
+  }
+
+  .feedback__button--left {
+    grid-area: left;
+    justify-self: right;
+  }
+
+  .feedback__button--right {
+    grid-area: right;
+    justify-self: left;
+  }
+
+  .quotes-list {
+    margin-top: 25px;
+  }
+
+  .quotes-list__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .quotes-list__item--active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .quotes-list__speaker-info {
+    width: 100%;
+    justify-content: center;
+  }
 }
-.quotes-list__item--active{
-display: flex; align-items:center; flex-direction:column; width: 100%}
-.quotes-list__speaker-info{width:100%; justify-content: center;}}

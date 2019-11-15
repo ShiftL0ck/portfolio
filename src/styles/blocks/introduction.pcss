@@ -1,0 +1,94 @@
+.introduction {
+  height: 100vh;
+  margin-top: 30px;
+}
+
+.introduction__container {
+  height: 91%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.introduction__title {
+  text-align: center;
+  width: 100%;
+}
+
+.button--scroll {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  justify-content: center;
+  font-size: 1rem;
+
+  &:hover {
+    font-weight: 700;
+    .icon-scroll {
+      transition: 0.3s;
+      width: 30px;
+      height: 36px;
+    }
+  }
+}
+
+.icon-scroll {
+  width: 20px;
+  height: 25px;
+  fill: #464d62;
+}
+
+@include desktop {
+  .introduction__title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .text-aplha--header {
+    margin-right: 50px;
+  }
+
+  .headline--title {
+    margin-top: -20px;
+    line-height: 1em;
+    font-size: 72px;
+  }
+
+  .span--title {
+    display: block;
+    margin-left: 25px;
+  }
+}
+
+@include tablets {
+  .introduction__title {
+    display: block;
+  }
+
+  .headline--title {
+    margin-top: -20px;
+    line-height: 1em;
+    font-size: 56px;
+  }
+
+  .text-aplha--header {
+    margin-right: 0px;
+  }
+
+  .span--title {
+    display: inline;
+    margin-left: 0;
+  }
+
+  .headline--title {
+    margin-top: 0px;
+  }
+
+  .button--scroll {
+    display: none;
+  }
+}    
