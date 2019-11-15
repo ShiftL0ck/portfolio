@@ -1,11 +1,13 @@
 .popup {
   display: flex;
   height: 100vh;
-  width: 100%;
+  width: 50%;
   position: fixed;
   top: 0;
   right: -3000px;
   transition: 0.5s;
+  background: white;
+  z-index: 1000;
 }
 
 .popup__logo{
@@ -20,13 +22,14 @@
   width: 55%;
   background: url("~images\content\go.png") no-repeat;
   background-size: cover;
+  display: none;
 }
 
 .popup__right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 45%;
+  width: 100%;
   position: relative;
   padding-left: 100px;
   background: #fff;
