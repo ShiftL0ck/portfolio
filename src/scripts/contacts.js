@@ -28,7 +28,7 @@ new Vue({
     "user.email": value => {
       return Validator.value(value)
         .required("Введите почту")
-        .email("Это не похоже на почту");
+        .email("Это не почта");
     },
     "user.message": value => {
       return Validator.value(value).required("Введите сообщение");
@@ -37,11 +37,8 @@ new Vue({
   methods: {
     async sendMessage() {
       if ((await this.$validate()) === false) {
-        console.error("Валидация не пройдена");
         return;
       }
-
-      console.log("Письмо успешно отправлено");
     }
   }
 });
